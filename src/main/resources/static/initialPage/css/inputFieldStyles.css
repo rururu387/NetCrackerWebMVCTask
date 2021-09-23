@@ -1,0 +1,24 @@
+.carInput
+{
+    flex: 1 1 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    min-width: 100px;
+    width: 50%;
+    border: solid;
+}
+
+.carInputField
+{
+    width: 100px;
+}
+
+.carButtons
+{
+    flex: 1 1 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    min-width: 100px;
+    width: 50%;
+    border: solid;
+}
