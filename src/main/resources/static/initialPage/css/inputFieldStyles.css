@@ -3,9 +3,11 @@
     flex: 1 1 100%;
     flex-direction: row;
     align-items: flex-start;
+    justify-content: space-around;
     min-width: 100px;
     width: 50%;
-    border: solid;
+    border-width: 1px;
+    border-color: springgreen;
 }
 
 .carInputField
@@ -20,5 +22,17 @@
     align-items: flex-start;
     min-width: 100px;
     width: 50%;
-    border: solid;
+    margin: 10px;
+}
+
+.inputElement
+{
+    display: inline-block;
+    margin: 10px;
+    width: 100px;
+}
+
+#header
+{
+    margin: 10px;
 }

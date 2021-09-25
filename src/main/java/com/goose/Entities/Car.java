@@ -1,21 +1,30 @@
 package com.goose.Entities;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.springframework.lang.NonNull;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
+//@Table(name="STUDENT", schema="SCHOOL")
+@Table(name = "car", schema = "public")
 public class Car
 {
     @Id
-    int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Integer id;
 
+    @Column(length = 50)
+    @NotNull
     String name;
 
-    short wheelAm;
+    @NotNull
+    Short wheelAm;
 
-    float weight;
+    @NotNull
+    Double weight;
 
+    @NotNull
     LocalDate creationDate;
 
     @Deprecated
@@ -24,16 +33,21 @@ public class Car
         //Only for Hibernate, no human usage!
     }
 
-    public Car(int index, String name, short wheelAm, float weight, LocalDate creationDate)
+    public Car(String name, short wheelAm, double weight, LocalDate creationDate)
     {
-        this.id = index;
         this.name = name;
         this.wheelAm = wheelAm;
         this.weight = weight;
         this.creationDate = creationDate;
     }
 
-    public int getId()
+    public Car(Integer index, String name, Short wheelAm, Double weight, LocalDate creationDate)
+    {
+        this(name, wheelAm, weight, creationDate);
+        this.id = index;
+    }
+
+    public Integer getId()
     {
         return id;
     }
@@ -43,12 +57,12 @@ public class Car
         return name;
     }
 
-    public short getWheelAm()
+    public Short getWheelAm()
     {
         return wheelAm;
     }
 
-    public float getWeight()
+    public Double getWeight()
     {
         return weight;
     }
@@ -58,7 +72,7 @@ public class Car
         return creationDate;
     }
 
-    public void setId(int id)
+    public void setId(Integer id)
     {
         this.id = id;
     }
@@ -68,12 +82,12 @@ public class Car
         this.name = name;
     }
 
-    public void setWheelAm(short wheelAm)
+    public void setWheelAm(Short wheelAm)
     {
         this.wheelAm = wheelAm;
     }
 
-    public void setWeight(float weight)
+    public void setWeight(Double weight)
     {
         this.weight = weight;
     }

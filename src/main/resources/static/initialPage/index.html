@@ -10,18 +10,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
-    <body>
+    <body id = "body">
 
-        <div>
-            <p>Car</p>
+        <div id = "header">
+            <h1>Car</h1>
         </div>
 
-        <div class = "carInput">
-            <input id = "idInput" class = "carInputField" value = "id"/>
-            <input id = "nameInput" class = "carInputField" value = "name"/>
-            <input id = "whellAmInput" class = "carInputField" value = "wheel count"/>
-            <input id = "weightInput" class = "carInputField" value = "weight"/>
-            <input id = "dateInput" class = "carInputField" value = "creationDate"/>
+        <div id = "carInput">
+            <span id = "idSection" class = "inputElement">
+                <a>Id</a>
+                <input id = "idInput" class = "carInputField"/>
+            </span>
+            <span id = "nameSection" class = "inputElement">
+                <a>Name</a>
+                <input id = "nameInput" class = "carInputField"/>
+            </span>
+            <span id = "wheelAmSection" class = "inputElement">
+                <a>Wheel amount</a>
+                <input id = "wheelAmInput" class = "carInputField"/>
+            </span>
+            <span id = "weightSection" class = "inputElement">
+                <a>Weight</a>
+                <input id = "weightInput" class = "carInputField"/>
+            </span>
+            <span id = "creationDateSection" class = "inputElement">
+                <a>Creation date</a>
+                <input id = "dateInput" class = "carInputField"/>
+            </span>
         </div>
 
         <div class = "carButtons">

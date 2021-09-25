@@ -1,30 +1,31 @@
-package com.goose.Models;
+package com.goose.Views;
 
 import com.google.gson.*;
 import com.google.gson.reflect.TypeToken;
 import com.goose.Entities.Car;
 
 import java.lang.reflect.Type;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class CarProcessing
+public class JsonView
 {
     public static String toJsonTable(List<Car> cars)
     {
         GsonBuilder gsonBuilder = new GsonBuilder().setPrettyPrinting();
-        /*gsonBuilder.registerTypeAdapter(LocalDateTime.class, new JsonSerializer<LocalDateTime>()
+        gsonBuilder.registerTypeAdapter(LocalDate.class, new JsonSerializer<LocalDate>()
         {
             @Override
-            public JsonElement serialize(LocalDateTime localDateTime, Type type, JsonSerializationContext jsonDeserializationContext) throws JsonParseException
+            public JsonElement serialize(LocalDate localDate, Type type, JsonSerializationContext jsonDeserializationContext) throws JsonParseException
             {
-                DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss, dd.MM.yyyy");
-                return new JsonPrimitive(dateTimeFormatter.format(localDateTime));
+                DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+                return new JsonPrimitive(dateFormatter.format(localDate));
             }
-        });*/
+        });
 
-        gsonBuilder.registerTypeAdapter(new TypeToken<List<Car>>() {}.getType(), new JsonSerializer<List<Car>>()
+        /*gsonBuilder.registerTypeAdapter(new TypeToken<List<Car>>() {}.getType(), new JsonSerializer<List<Car>>()
         {
             @Override
             public JsonElement serialize(List<Car> carList, Type type, JsonSerializationContext jsonSerializationContext)
@@ -45,7 +46,7 @@ public class CarProcessing
 
                 return carArrayRepresentation;
             }
-        });
+        });*/
 
         Gson gson = gsonBuilder.create();
 
