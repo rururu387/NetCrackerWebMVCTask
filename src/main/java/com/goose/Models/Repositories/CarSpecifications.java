@@ -73,7 +73,7 @@ public class CarSpecifications
                 @Override
                 public Predicate toPredicate(Root<Car> root, CriteriaQuery<?> query, CriteriaBuilder criteriaBuilder)
                 {
-                    return criteriaBuilder.equal(root.get("name"), wheelAm);
+                    return criteriaBuilder.equal(root.get("wheelAm"), wheelAm);
                 }
             };
         }

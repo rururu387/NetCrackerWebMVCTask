@@ -36,3 +36,44 @@
 {
     margin: 10px;
 }
+
+.carInputField
+{
+    /*display: block;*/
+    margin: 5px;
+    padding: var(--inputPaddingV) var(--inputPaddingH);
+    color: inherit;
+    width: 180px;
+    font-family: inherit;
+    font-size: var(--inputFontSize);
+    font-weight: inherit;
+    line-height: var(--inputLineHeight);
+    border-radius: 0.4rem;
+    border-color: #0081D5;
+    transition: box-shadow var(--transitionDuration);
+}
+
+.carButton
+{
+    /*display: block;*/
+    margin-top: 10px;
+    border: 0;
+    font-size: 12px;
+    padding: 8px 15px;
+    border-radius: 15px;
+    background: #0081D5;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.carButton:hover,
+.carButton:focus
+{
+    background: #005C99;
+}
+
+.carButton:active
+{
+    background: #003659;
+}
